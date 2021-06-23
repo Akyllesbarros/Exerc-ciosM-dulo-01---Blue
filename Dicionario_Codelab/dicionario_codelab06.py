@@ -14,52 +14,50 @@ for c in range(15) :
     cadastro['nome'] = input('Digite seu nome: ')
     for m in range(5) :
         if m == 0 :
-            cadastro['mediaPortugues'] = int(input('Digite sua média em Português: '))
+            cadastro['mediaPortugues'] = float(input('Digite sua média em Português: '))
             if cadastro['mediaPortugues'] >= 7 :
                 cadastro['situacaoPortugues'] = 'Aprovado!'
-            elif 6.9 >= cadastro['mediaPortugues'] >= 7 : 
-                cadastro['mediaPortugues'] = 'Recuperação!'
-            else : 
+            if 6.9 >= cadastro['mediaPortugues'] >= 5 : 
+                cadastro['situacaoPortugues'] = 'Recuperação!'
+            if cadastro['mediaPortugues'] < 5 : 
                 cadastro['situacaoPortugues'] = 'Reprovado!'
 
 
         if m == 1 :
-            cadastro['mediaMatematica'] = int(input('Digite sua média em Matemática: '))
+            cadastro['mediaMatematica'] = float(input('Digite sua média em Matemática: '))
             if cadastro['mediaMatematica'] >= 7 :
                 cadastro['situacaoMatematica'] = 'Aprovado!'
-            elif 6.9 >= cadastro['mediaMatematica'] >= 7 : 
-                cadastro['mediaMatematica'] = 'Recuperação!'
-            else : 
+            if 6.9 >= cadastro['mediaMatematica'] >= 5 : 
+                cadastro['situacaoMatematica'] = 'Recuperação!'
+            if cadastro['mediaMatematica'] < 5: 
                 cadastro['situacaoMatematica'] = 'Reprovado!'
 
         if m == 2 :
-            cadastro['mediaHistoria'] = int(input('Digite sua média em História: '))
+            cadastro['mediaHistoria'] = float(input('Digite sua média em História: '))
             if cadastro['mediaHistoria'] >= 7 :
                 cadastro['situacaoHistoria'] = 'Aprovado!'
-            elif 6.9 >= cadastro['mediaHistoria'] >= 7 : 
-                cadastro['mediaHistoria'] = 'Recuperação!'
-            else : 
+            if 6.9 >= cadastro['mediaHistoria'] >= 5 : 
+                cadastro['situacaoHistoria'] = 'Recuperação!'
+            if cadastro['mediaHistoria'] < 5: 
                 cadastro['situacaoHistoria'] = 'Reprovado!'
 
         if m == 3 :
-            cadastro['mediaGeografia'] = int(input('Digite sua média em Geografia: '))
+            cadastro['mediaGeografia'] = float(input('Digite sua média em Geografia: '))
             if cadastro['mediaGeografia'] >= 7 :
                 cadastro['situacaoGeografia'] = 'Aprovado!'
-            elif 6.9 >= cadastro['mediaGeografia'] >= 7 : 
-                cadastro['mediaGeografia'] = 'Recuperação!'
-            else : 
-                cadastro['situacaoPortugues'] = 'Reprovado!'
+            if 6.9 >= cadastro['mediaGeografia'] >= 5 : 
+                cadastro['situacaoGeografia'] = 'Recuperação!'
+            if cadastro['mediaGeografia'] < 5: 
+                cadastro['situacaoGeografia'] = 'Reprovado!'
 
         if m == 4 :
-            cadastro['mediaCiencias'] = int(input('Digite sua média em Ciências: '))
+            cadastro['mediaCiencias'] = float(input('Digite sua média em Ciências: '))
             if cadastro['mediaCiencias'] >= 7 :
                 cadastro['situacaoCiencias'] = 'Aprovado!'
-            elif 6.9 >= cadastro['mediaCiencias'] >= 7 : 
-                cadastro['mediaCiencias'] = 'Recuperação!'
-            else : 
+            if 6.9 >= cadastro['mediaCiencias'] >= 5 : 
+                cadastro['situacaoCiencias'] = 'Recuperação!'
+            if cadastro['mediaCiencias'] < 5: 
                 cadastro['situacaoCiencias'] = 'Reprovado!'
 
 
-boletim = pd.DataFrame(cadastro)
-print(boletim)
-
+print(cadastro)
