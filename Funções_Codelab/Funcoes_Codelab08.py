@@ -13,26 +13,38 @@ from datetime import datetime
 # Validação do ano 
 
 def data_valida(data):
- 
-    # mes ou ano inválido, retorna NULL
-    if mes < 1 or mes > 12 or ano <= 0:
-        return print('NULL')
+    
+    try :
+        # Entrada da data 
 
-    # verifica qual o último dia do mês
-    if mes in (1, 3, 5, 7, 8, 10, 12):
-        ultimo_dia = 31
-    elif mes == 2:
-        if (ano % 4 == 0) and (ano % 100 != 0 or ano % 400 == 0):
-            ultimo_dia = 29
+    data = input('Digite a data no formato DD / MM / AAAA:\n') 
+    data = datetime.strptime(data, '%d/%m/%Y')  # transforma data string em formato DATA. 
+
+    #Pega a data e parte ela em MES, DIA e ANO (e transforma em INTEIRO)
+
+    mes = int('{}'.format(data.month))      
+    dia = int('{}'.format(data.day))
+    ano = int('{}'.format(data.year))
+        # mes ou ano inválido, retorna NULL
+        if mes < 1 or mes > 12 or ano <= 0:
+            return print('NULL')
+
+        # verifica qual o último dia do mês
+        if mes in (1, 3, 5, 7, 8, 10, 12):
+            ultimo_dia = 31
+        elif mes == 2:
+            if (ano % 4 == 0) and (ano % 100 != 0 or ano % 400 == 0):
+                ultimo_dia = 29
+            else:
+                ultimo_dia = 28
         else:
-            ultimo_dia = 28
-    else:
-        ultimo_dia = 30
+            ultimo_dia = 30
 
-    # verifica se o dia é válido
-    if dia < 1 or dia > ultimo_dia:
+        # verifica se o dia é válido
+        if dia < 1 or dia > ultimo_dia:
+            print('NULL')
+    except ValueError :
         print('NULL')
-
     
 
 # Função para transformar mês int, em String/ Extenso
